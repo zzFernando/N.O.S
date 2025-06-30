@@ -1,3 +1,9 @@
+#DATA
+data/go_arounds_augmented.csv
+data/go_arounds_augmented.csv.gz
+data/X.npy
+data/y.npy
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

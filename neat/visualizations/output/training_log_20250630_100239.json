@@ -1,0 +1,29 @@
+{
+  "config": {
+    "pop_size": 50,
+    "fitness_threshold": 0.99,
+    "num_inputs": 8,
+    "num_outputs": 1,
+    "num_hidden": 0,
+    "activation_default": "sigmoid",
+    "aggregation_default": "sum"
+  },
+  "generations": [
+    {
+      "generation": 0,
+      "best_fitness": 0.9450276398213082,
+      "avg_fitness": 0.511329207117722,
+      "std_fitness": 0.17033498380250178,
+      "num_species": 1,
+      "avg_species_size": 50.0
+    },
+    {
+      "generation": 1,
+      "best_fitness": 0.9960677206818238,
+      "avg_fitness": 0.7252985787017395,
+      "std_fitness": 0.15611662552619904,
+      "num_species": 1,
+      "avg_species_size": 50.0
+    }
+  ]
+}
