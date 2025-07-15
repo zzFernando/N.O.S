@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>N.O.S - Neuroevolution Visualization</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-force-bundling@0.2.2/build/d3-force-bundling.min.js"></script>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>🧠 N.O.S - Neuroevolution Visualization</h1>
+      <p>Análise da Trajetória Evolutiva de Redes Neurais (NEAT)</p>
+    </header>
+
+    <aside class="controls-panel">
+      <div class="control-group">
+        <h3>📊 Controles de Visualização</h3>
+
+        <div class="control-item">
+          <label for="genRange">Geração: <span id="genValue">0-15</span></label>
+          <input type="range" id="genRange" min="0" max="15" value="15" step="1">
+        </div>
+
+        <div class="control-item">
+          <label for="fitnessMin">Fitness Mínimo: <span id="fitnessValue">0.0</span></label>
+          <input type="range" id="fitnessMin" min="0.0" max="1.0" value="0.0" step="0.01">
+        </div>
+
+        <div class="control-item">
+          <label><input type="checkbox" id="toggleTraj" checked> Mostrar Trajetórias</label>
+        </div>
+
+        <div class="control-item">
+          <label><input type="checkbox" id="toggleField" checked> Mostrar Campo Vetorial</label>
+        </div>
+
+        <div class="control-item">
+          <label><input type="checkbox" id="toggleLabels" checked> Mostrar Labels</label>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <h3>🎨 Configurações</h3>
+
+        <div class="control-item">
+          <label for="colorScheme">Esquema de Cores:</label>
+          <select id="colorScheme">
+            <option value="viridis">Viridis</option>
+            <option value="plasma">Plasma</option>
+            <option value="inferno">Inferno</option>
+            <option value="magma">Magma</option>
+          </select>
+        </div>
+
+        <div class="control-item">
+          <label for="pointSize">Tamanho dos Pontos:</label>
+          <input type="range" id="pointSize" min="3" max="15" value="8" step="1">
+        </div>
+
+        <div class="control-item">
+          <label for="trajectoryWidth">Largura das Trajetórias:</label>
+          <input type="range" id="trajectoryWidth" min="1" max="5" value="2" step="0.5">
+        </div>
+      </div>
+
+      <div class="control-group">
+        <h3>📈 Estatísticas</h3>
+        <div id="stats">
+          <div class="stat-item">
+            <span class="stat-label">Genomas:</span>
+            <span class="stat-value" id="genomeCount">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Gerações:</span>
+            <span class="stat-value" id="generationCount">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Fitness Médio:</span>
+            <span class="stat-value" id="avgFitness">0.000</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Fitness Máximo:</span>
+            <span class="stat-value" id="maxFitness">0.000</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="visualization-container">
+      <svg id="chart"></svg>
+
+      <!-- Legend -->
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-color" style="background: linear-gradient(to right, #440154, #31688e, #35b779, #fde725);">
+          </div>
+          <span>Fitness (Baixo → Alto)</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: #666; width: 20px; height: 2px;"></div>
+          <span>Trajetórias</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: #999; width: 15px; height: 1px;"></div>
+          <span>Campo Vetorial</span>
+        </div>
+      </div>
+    </main>
+
+    <!-- Tooltip -->
+    <div id="tooltip" class="tooltip"></div>
+  </div>
+
+  <!-- Load modules -->
+  <script src="scripts/draw_scatter.js"></script>
+  <script src="scripts/draw_trajectories.js"></script>
+  <script src="scripts/draw_vector_field.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>

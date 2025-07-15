@@ -1,0 +1,66 @@
+[
+  {
+    "generation": 1,
+    "id": 4,
+    "fitness": 0.8261822132952699,
+    "nodes": [
+      {
+        "id": 0,
+        "type": "hidden",
+        "bias": -1.655226280935727,
+        "activation": "sigmoid",
+        "aggregation": "sum"
+      }
+    ],
+    "connections": [
+      {
+        "in": -1,
+        "out": 0,
+        "weight": -0.8292342249125423,
+        "enabled": true
+      },
+      {
+        "in": -2,
+        "out": 0,
+        "weight": 0.6903730080293038,
+        "enabled": true
+      },
+      {
+        "in": -3,
+        "out": 0,
+        "weight": -0.027474356472245807,
+        "enabled": true
+      },
+      {
+        "in": -4,
+        "out": 0,
+        "weight": 0.31437822828724077,
+        "enabled": true
+      },
+      {
+        "in": -5,
+        "out": 0,
+        "weight": 0.6207603750791532,
+        "enabled": true
+      },
+      {
+        "in": -6,
+        "out": 0,
+        "weight": 1.5326293695840199,
+        "enabled": true
+      },
+      {
+        "in": -7,
+        "out": 0,
+        "weight": -0.6483379015742016,
+        "enabled": true
+      },
+      {
+        "in": -8,
+        "out": 0,
+        "weight": -0.08706728452991988,
+        "enabled": true
+      }
+    ]
+  }
+]
